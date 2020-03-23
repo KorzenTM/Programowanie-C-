@@ -8,8 +8,8 @@ int main(){
 
     std::cout<<"Zmienna x:"<<x<<std::endl;
     std::cout<<"Zmienna y:"<<y<<std::endl;
-    std::cout<<"Zmienna v:"<<z<<std::endl;
-    std::cout<<"Zmienna z:"<<v<<std::endl;
+    std::cout<<"Zmienna z:"<<z<<std::endl;
+    std::cout<<"Zmienna v:"<<v<<std::endl;
 
     return 0;
 }
