@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/Moje/Uczelnia/IV semestr/Programowanie w C++/repos/C++/Lista_1/zad_5/zad_5.cpp
+iostream
+-
+math.h
+-
+

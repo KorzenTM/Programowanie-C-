@@ -1,0 +1,3 @@
+F:/Moje/Uczelnia/IV semestr/Programowanie w C++/repos/C++/Lista_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/Moje/Uczelnia/IV semestr/Programowanie w C++/repos/C++/Lista_1/cmake-build-debug/CMakeFiles/main.dir
+F:/Moje/Uczelnia/IV semestr/Programowanie w C++/repos/C++/Lista_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
