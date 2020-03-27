@@ -2,21 +2,19 @@
 #include <vector>
 #include <climits>
 
-int min(std::vector<int> &w)
+int min(std::vector<int> const &w)
 {
-    int temp; //przechowuje tymczasowo liczbe do porownania
+
     if (w.size() == 0)
         return INT_MIN;
-    else
+
+    int temp = w[0]; //pierwsza liczba
+    for(unsigned i = 0 ;i < w.size() ;i++)
     {
-        temp = w[0]; //pierwsza liczba
-        for(unsigned i = 0 ;i < w.size() ;i++)
-        {
-            if (temp>w[i])
-                temp = w[i];
-        }
-        return temp;
+        if (temp>w[i])
+            temp = w[i];
     }
+    return temp;
 }
 
 int main()

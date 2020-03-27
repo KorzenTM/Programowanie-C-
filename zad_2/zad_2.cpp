@@ -9,13 +9,13 @@ void zeruj(std::vector<double> &w)
     }
 }
 
-std::ostream &operator<< (std::ostream &F,std::vector<double> const&w)
+std::ostream &operator<< (std::ostream &F,std::vector<double> const &w)
 {
     F << "(";
     if(!w.empty())
         F << w[0];
     for(unsigned i=0;i<w.size();i++)
-        F << "," << w[i];
+        F << ", " << w[i];
     F << ")";
     return F;
 }

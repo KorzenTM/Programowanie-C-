@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <exception>
 
 double suma(double (*f)(int) , int m , double &eps)
 {
@@ -8,7 +9,6 @@ double suma(double (*f)(int) , int m , double &eps)
     double sub_total = 0.0;
     double tmp_sum=0.0;
     double s=0.0;
-    double e=0.0; //bład
 
     for (int i = 0; i < m; i ++)
     {
@@ -37,26 +37,30 @@ double suma(double (*f)(int) , int m , double &eps)
 double f_1(int n)
 {
     double x = static_cast<double> (n);
-    if (n > 1) //zabezpieczenie. Z wlasnosci logarytmow - log k => k>0
-        return (pow(-1.0 , x)/log(x));
+    if (n > 1)
+        return (n % 2 == 0) ? 1.0/log(x) : -1.0/log(x);
+    throw "Argument musi byc wiekszy od 0";
+
+
+
 }
 
 double f_2(int n)
 {
     double x = static_cast<double> (n);
-    return (pow(-1.0 , x) * (1.0 / (n + 1.0)));
+    return (n % 2 ==0) ? 1.0 * (1.0 / (n + 1.0)) : -1.0 * (1.0 / (n + 1.0));
 }
 
 double f_3(int n)
 {
     double x= static_cast<double> (n);
-    return (pow(-1.0 , x) * (1.0 / (2.0 * n + 1.0)));
+    return (n % 2 ==0) ? 1.0 * (1.0 / (2.0 * n + 1.0)) : -1.0 * (1.0 / (2.0 * n + 1.0));
 }
 
 int main()
 {
     double eps = 10E-10;
-    std:: cout << "s1 = " << suma(f_1,50,eps) << "|e = " << eps << std:: endl; //podany szereg nie spełnia warunków f(x)>0 dla x>=0.?
+    std:: cout << "s1 = " << suma(f_1,50,eps) << "|e = " << eps << std:: endl;
     eps = 10E-10;
     std:: cout << "s2 = " << suma(f_2,50,eps) << "|e = " << eps << std:: endl;
     eps = 10E-10;

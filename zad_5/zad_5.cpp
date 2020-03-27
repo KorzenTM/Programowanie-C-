@@ -16,19 +16,20 @@ int fibo1(int n)
 
 int fibo2(int n)
 {
-    return 1.0/sqrt(5.0) * ( pow( (1.0+sqrt(5.0))/2.0 , (double)(n) ) - pow( (1.0-sqrt(5.0))/2.0 , (double)(n) ) );
+    return std::round(1.0/sqrt(5.0) * ( pow( (1.0+sqrt(5.0))/2.0 , (double)(n) ) - pow( (1.0-sqrt(5.0))/2.0 , (double)(n) ) ));
 }
 
 int fibo3(int n)
 {
-    static std::vector<int> v(n);
-    if (n == 0)
-        v[0]=0;
-    if (n == 1)
-        v[1]=1;
-    else
-        v[n]=v[n-1]+v[n-2];
-    return v[n];
+    static std::vector<int> v={1,1};
+    if (n <= v.size())
+        return v[n-1];
+    for (int i = v.size()-1 ; i < n; ++i)
+    {
+        v.push_back(v[i]+v[i-1]);
+    }
+    return v[n-1];
+
 }
 
 int main()
