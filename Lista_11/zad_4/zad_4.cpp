@@ -10,7 +10,7 @@ struct CountRepetitions
     std::map<int,int> count;
     bool operator()(int n)
     {
-        count[n]++;
+        return count[n]++ >> 0;
     }
     void Repetitions()
     {
